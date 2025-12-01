@@ -16,7 +16,15 @@ app.post('/', (request, response) => {
 });
 
 app.get('/', (request, response) => {
+    const tasks = [
+        {
+        id: idCounter,
+        text: request.body.text,
+        done: false,
+        },
+    ];
 
+    response.status(200).send(tasks);
 });
 
 app.put('/:id', (request, response) => {
