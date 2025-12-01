@@ -28,7 +28,13 @@ app.get('/', (request, response) => {
 });
 
 app.put('/:id', (request, response) => {
+    const task = {
+        id: request.params.id,
+        text: request.body.text,
+        done: request.body.done,
+    };
 
+    response.status(200).send(task);
 });
 
 app.delete('/:id', (request, response) => {
