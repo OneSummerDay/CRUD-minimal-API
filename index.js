@@ -16,7 +16,10 @@ app.get('/', (request, response) => {
 });
 
 app.put('/:id', (request, response) => {
-    const task = db.update(request.params.id);
+    const task = db.update(request.params.id, request.body);
+    if (task === null) {
+        response.status(404).send('Task not found');
+    }
     response.status(200).send(task);
 });
 
