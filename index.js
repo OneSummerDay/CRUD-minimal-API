@@ -1,13 +1,12 @@
 const express = require('express');
-const db = require('./db')
+const db = require('./db');
 
 const app = express();
 app.use(express.json());
 
 
 app.post('/', (request, response) => {
-    
-
+    const task = db.create(request.body);
     response.status(201).send(task);
 });
 
