@@ -38,7 +38,7 @@ app.put('/:id', (request, response) => {
 });
 
 app.delete('/:id', (request, response) => {
-
+    response.sendStatus(205);
 });
 
 app.listen(80);
