@@ -19,7 +19,7 @@ app.get('/', (request, response) => {
     const tasks = [
         {
         id: idCounter,
-        text: request.body.text,
+        text: 'Eat icecream',
         done: false,
         },
     ];
