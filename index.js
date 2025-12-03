@@ -24,6 +24,7 @@ app.put('/:id', (request, response) => {
 });
 
 app.delete('/:id', (request, response) => {
+    db.deleteOne(request.params.id);
     response.sendStatus(205);
 });
 
