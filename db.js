@@ -21,3 +21,14 @@ const create = (body) => {
 const read = () => {
     return [...tasks];
 };
+
+const update = (id, body) => {
+    const task = tasks.find((one) => one.id == id);
+    if (task) {
+        task.text = body.text;
+        task.done = body.done;
+        return task;
+    } else {
+        return null;
+    }
+};
