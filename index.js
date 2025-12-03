@@ -16,12 +16,7 @@ app.get('/', (request, response) => {
 });
 
 app.put('/:id', (request, response) => {
-    const task = {
-        id: request.params.id,
-        text: request.body.text,
-        done: request.body.done,
-    };
-
+    const task = db.update(request.params.id);
     response.status(200).send(task);
 });
 
