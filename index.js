@@ -11,14 +11,7 @@ app.post('/', (request, response) => {
 });
 
 app.get('/', (request, response) => {
-    const tasks = [
-        {
-        id: idCounter,
-        text: 'Eat icecream',
-        done: false,
-        },
-    ];
-
+    const tasks = db.read();
     response.status(200).send(tasks);
 });
 
