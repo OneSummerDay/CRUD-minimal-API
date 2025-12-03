@@ -32,3 +32,10 @@ const update = (id, body) => {
         return null;
     }
 };
+
+const deleteOne = (id) => {
+    const index = tasks.findIndex((one) => one.id == id);
+    if (index >= 0) {
+        tasks.splice(index, 1);
+    }
+};
