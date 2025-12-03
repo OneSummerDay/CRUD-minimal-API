@@ -7,7 +7,7 @@
 const idCounter = 1;
 const tasks = [];
 
-const create = (body) => {
+exports.create = (body) => {
     const task = {
         id: idCounter,
         text: body.text,
@@ -18,11 +18,11 @@ const create = (body) => {
     tasks.push(task);
 };
 
-const read = () => {
+exports.read = () => {
     return [...tasks];
 };
 
-const update = (id, body) => {
+exports.update = (id, body) => {
     const task = tasks.find((one) => one.id == id);
     if (task) {
         task.text = body.text;
@@ -33,7 +33,7 @@ const update = (id, body) => {
     }
 };
 
-const deleteOne = (id) => {
+exports.deleteOne = (id) => {
     const index = tasks.findIndex((one) => one.id == id);
     if (index >= 0) {
         tasks.splice(index, 1);
